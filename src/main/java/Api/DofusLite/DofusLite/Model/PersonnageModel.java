@@ -2,12 +2,17 @@ package Api.DofusLite.DofusLite.Model;
 
 
 import Api.DofusLite.DofusLite.Model.TemplateModel;
+import Api.DofusLite.DofusLite.Model.BodyModel;
+import Api.DofusLite.DofusLite.Model.WeaponModel;
+
+
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,21 +25,28 @@ import javax.persistence.Table;
 @Table(name="PersonnageModel")
 public class PersonnageModel implements Serializable {
 	private static final long serialVersionUID= 850206576813L;	
+	
+	//-----------------------------------------	
 	@Id
 	@Column(name="idPersonnageModel")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+	//-----------------------------------------		
 	@OneToOne
     private TemplateModel idTemplate;
-	@Column(name="idWeaponPersonnageModel")
-    private int idWeapon;
-	@Column(name="idBodyPersonnageModel")
-    private int idBody;
+	//-----------------------------------------	
+	@OneToOne
+    private WeaponModel idWeapon;
+	//-----------------------------------------	  
+	@OneToOne
+    private BodyModel idBody;
     
 	
-    public PersonnageModel() {}
-    
-    public PersonnageModel(int id, TemplateModel idTemplate, int idWeapon,int idBody) {
+    public PersonnageModel() {
+    	
+    }
+    //classe ==> idTemplate exemple classe 1 = idTemplate id 1/Iop
+    public PersonnageModel(int id, TemplateModel idTemplate, WeaponModel idWeapon,BodyModel idBody) {
         this.id=id;
         this.idTemplate=idTemplate;
         this.idWeapon=idWeapon;
@@ -57,19 +69,19 @@ public class PersonnageModel implements Serializable {
 		this.idTemplate = idTemplate;
 	}
 
-	public int getIdWeapon() {
+	public WeaponModel getIdWeapon() {
 		return idWeapon;
 	}
 
-	public void setIdWeapon(int idWeapon) {
+	public void setIdWeapon(WeaponModel idWeapon) {
 		this.idWeapon = idWeapon;
 	}
 
-	public int getIdBody() {
+	public BodyModel getIdBody() {
 		return idBody;
 	}
 
-	public void setIdBody(int idBody) {
+	public void setIdBody(BodyModel idBody) {
 		this.idBody = idBody;
 	}
 	

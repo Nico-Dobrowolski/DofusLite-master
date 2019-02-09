@@ -14,18 +14,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TemplateModel")
 public class TemplateModel implements Serializable {
-	private static final long serialVersionUID= 8502013L;	
+	private static final long serialVersionUID= 8502013L;
+	
+	//-----------------------------------------	
 	@Id
 	@Column(name="idTemplateModel")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-	
+	//-----------------------------------------	
 	@Column(name="NomTemplateModel")
     private String nom;
+	//-----------------------------------------	
 	@Column(name="ClasseTemplateModel")
     private String classe;
+	//-----------------------------------------	
 	@Column(name="DescriptionTemplateModel")
     private String description;
+	//-----------------------------------------	
 	@Column(name="UrlTemplateModel")
     private String url;
     
@@ -97,10 +102,10 @@ public class TemplateModel implements Serializable {
 
 	 return "Template{"+
 
-	 "id= " + id + 
-	 ", Nom= '"+ nom + '\'' + 
-	 ", Classe= '"+ classe + '\'' + 
-	 ", Description= '"+ description + '\'' +
+	 "id = " + id + 
+	 ", Nom = '"+ nom + '\'' + 
+	 ", Classe = '"+ classe + '\'' + 
+	 ", Description = '"+ description + '\'' +
 	 ", Url= " + url+ '}';
 	 }
 
