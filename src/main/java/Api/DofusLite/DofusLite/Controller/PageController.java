@@ -11,4 +11,15 @@ public class PageController {
 	public String home() {
 		return "home";
 	}
+	
+	@GetMapping("/creation")
+	public String creation() {
+		return "creation";
+	}
+	
+	@GetMapping("/tendency")
+	public String tendency() {
+		return "tendency";
+	}
+
 }

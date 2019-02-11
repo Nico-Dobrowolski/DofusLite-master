@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ApiRest Planner lite</title>
   </head>
+
   <body>
     <!-- menu -->
     <header>
@@ -26,16 +27,28 @@
     </header>
     <!-- end menu -->
     <div class="container">
-      <h5>Liste des classes</h5>
-      <div id="templates" class="card-deck" ></div>
+      <h5>Creation de personnage</h5>
+      <div id="template"></div>
+      <select class="custom-select" id="weapons">
+        <option selected>Select weapon</option>
+      </select>
+      <select class="custom-select" id="body">
+        <option selected>Select body</option>
+      </select>
     </div>
-    <!-- Jquery/JavaScript/bootstrap -->
+    <button type="button" id="addPersonnage" class="btn btn-primary">Primary</button>
+
+  
+ 
+     <!-- Jquery/JavaScript/bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- jQuery library -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <!-- Latest compiled JavaScript -->
-   <script src="js/javascripts/templates.js"></script>
+   <script src="js/javascripts/creation.js"></script>
+   <script src="js/javascripts/bootstrap-flash-alert.min.js"></script>
+   <script src="js/javascripts/bootstrap-flash-alert.js"></script>
 
   </body>
 </html>
