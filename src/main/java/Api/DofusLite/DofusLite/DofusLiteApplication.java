@@ -9,6 +9,5 @@ public class DofusLiteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DofusLiteApplication.class, args);
 	}
-
 }
 

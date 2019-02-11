@@ -6,9 +6,6 @@ package Api.DofusLite.DofusLite.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import com.fasterxml.jackson.databind.DeserializationFeature;
-
 //---------------- Person
 import Api.DofusLite.DofusLite.Dao.PersonnageDao;
 import Api.DofusLite.DofusLite.Model.PersonnageModel;
