@@ -18,13 +18,14 @@ import javax.persistence.Table;
 
 
 
+
 //=========================================Entity======================================
 
 
 @Entity
 @Table(name="PersonnageModel")
 public class PersonnageModel implements Serializable {
-	private static final long serialVersionUID= 850206576813L;	
+	private static final long serialVersionUID= 850206576819L;	
 	
 	//-----------------------------------------	
 	@Id
@@ -42,12 +43,10 @@ public class PersonnageModel implements Serializable {
     private BodyModel idBody;
     
 	
-    public PersonnageModel() {
-    	
-    }
-    //classe ==> idTemplate exemple classe 1 = idTemplate id 1/Iop
-    public PersonnageModel(int id, TemplateModel idTemplate, WeaponModel idWeapon,BodyModel idBody) {
-        this.id=id;
+    public PersonnageModel() {}
+    
+    public PersonnageModel( int id,TemplateModel idTemplate,WeaponModel idWeapon,BodyModel idBody) {
+    	this.id=id;
         this.idTemplate=idTemplate;
         this.idWeapon=idWeapon;
         this.idBody=idBody;

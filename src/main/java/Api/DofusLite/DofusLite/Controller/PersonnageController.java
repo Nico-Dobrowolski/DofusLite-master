@@ -2,37 +2,49 @@ package Api.DofusLite.DofusLite.Controller;
 
 
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-//---------------- Personnage
+import com.fasterxml.jackson.databind.DeserializationFeature;
+
+//---------------- Person
 import Api.DofusLite.DofusLite.Dao.PersonnageDao;
 import Api.DofusLite.DofusLite.Model.PersonnageModel;
 //!--------------------------
-
 import java.util.List;
 //=========================================RESOURCE======================================
+
+
 @RestController
 public class PersonnageController {
 
     @Autowired // ---> Spring se charge d'en fabriquer une instance
     private PersonnageDao personnageDao; //DAO ==> Repository
     
-    @RequestMapping(value="/Personnages", method=RequestMethod.GET)
+    
+    @GetMapping(value="/Personnages")
     public List<PersonnageModel> PersonnageArray() {
     	return personnageDao.findAll();
     }
     
-    @RequestMapping(value="/Personnage/{id}", method=RequestMethod.GET)
+    @GetMapping(value = "/Personnage/{id}")
  	public List<PersonnageModel> IdPersonnage(@PathVariable int id) {
      	return personnageDao.findById(id);
  	}
     
-    @RequestMapping(value="/Personnages", method=RequestMethod.POST)
-    public void createPersonnage(@RequestBody PersonnageModel personnage) {
-    	 personnageDao.save(personnage);
+
+    //value = "/Personnages", consumes= {"application/json"}
+    @PostMapping(value="/Personnages")
+    public PersonnageModel addPersonnage(@RequestBody PersonnageModel personnage) {
+    	//return personnageDao.save(personnage);
+
+    	System.out.println(personnage);
+    	return personnageDao.save(personnage);
     }
     
+
 
     
     

@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import Api.DofusLite.DofusLite.Model.PersonnageModel;
+import Api.DofusLite.DofusLite.Model.PersonnageModel;;
 
 @Repository
 public interface PersonnageDao extends CrudRepository<PersonnageModel, Long>{

@@ -23,14 +23,15 @@ public class TemplateController {
     	return templateDao.findAll();
     }
     
-    @RequestMapping(value="/Template/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/Templates/{id}", method=RequestMethod.GET)
 	public List<TemplateModel> IdTemplate(@PathVariable int id) {
     	return templateDao.findById(id);
 	}
     
     @RequestMapping(value="/Templates", method=RequestMethod.POST)
-    public void createTemplate(@RequestBody TemplateModel template) { // Cette annotation demande à Spring que le JSON contenu dans la partie body de la requête HTTP soit converti en objet Java
+    public TemplateModel createTemplate(@RequestBody TemplateModel template) { // Cette annotation demande à Spring que le JSON contenu dans la partie body de la requête HTTP soit converti en objet Java
     	 templateDao.save(template);
+    	 return template;
 
     }
     

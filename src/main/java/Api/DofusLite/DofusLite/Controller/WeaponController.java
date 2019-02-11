@@ -19,9 +19,11 @@ public class WeaponController {
     public List<WeaponModel> WeaponArray() {
     	return weaponDao.findAll();
     }
+   
     
-    @RequestMapping(value="/Weapon/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/Weapons/{id}", method=RequestMethod.GET)
 	public List<WeaponModel> IdWeapon(@PathVariable int id) {
     	return weaponDao.findById(id);
 	}
+    
 }

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="WeaponModel")
 public class WeaponModel implements Serializable {
 
-	private static final long serialVersionUID= 85823L;
+	private static final long serialVersionUID= 88143L;
 
 	@Id
 	@Column(name="idWeaponModel")
