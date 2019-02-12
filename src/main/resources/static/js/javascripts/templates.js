@@ -3,14 +3,12 @@ $(function (){
     $.ajax({
         type: 'GET',
         url:'/Templates',
-        success: function(personnages){
-          $.each(personnages, function(i, personnage) {
-            $templates.append('<div class="card" style="max-width: 250px;"><div class="card-body"><div class="card-body text-center"><h4 class="card-title">'+personnage.nom+'</h4><p class="card-text">'+personnage.descrption+'</p></div></div><img class="img-fluid card-img-bottom" style="max-width: 250px; max-height: 250px;" src="'+personnage.url+'"/><a href="/creation?idTemplate='+personnage.id+'" class="btn btn-primary">Choisir ce personnage</a></div>'
             
-            );
+        success: function(templates){
+          $.each(templates, function(i, template) {
+            $templates.append('<div class="col-lg-4 col-md-6 mb-md-0 mb-4"> <div class="view overlay rounded z-depth-1"> <a href="/creation?idTemplate='+template.id+'"class="btn btn-dark"><img src="'+template.url+'" class="img-fluid" alt="Sample project image"></a></div><div class="card-body pb-0"><h4 class="font-weight-bold my-3">'+template.classe+'</h4><p class="grey-text">'+template.descrption+'</p></div></div>');
           });
         }
     });
 });
-
 

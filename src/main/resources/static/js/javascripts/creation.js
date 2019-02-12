@@ -1,24 +1,23 @@
 $(function (){
 //send data var to view
-    var $body = $('#body');
+    var $body = $('#allbody');
     var $weapons = $('#weapons');
     var $template = $('#template');
 
 //get parma on url
     urlParams = new URLSearchParams(window.location.search);
-    var idOfTemplate = urlParams.get('idTemplate');
+    $idOfTemplate = urlParams.get('idTemplate');
  //get data var  from view
-    
-    var $weapons = $('#weapons');
-    var $body = $('#body');
+    console.log($idOfTemplate);
+
 
     $.ajax({
-        
         type: 'GET',
         url:'/Body',
         success: function(body){
             $.each(body, function(i, body) {
-                $body.append('<option value='+ body.id +'>' + body.name + '</option>');
+                $body.append('<option value='+ body.id +'>' + body.name +'<a> +'+body.health+' vie</a></option>'
+                );  
             });
         }
     });
@@ -27,24 +26,27 @@ $(function (){
         url:'/Weapons',
         success: function(weapons){
             $.each(weapons, function(i, weapon) {
-                $weapons.append('<option value='+ weapon.id +'>' + weapon.name + '</option>');
+                $weapons.append('<option value='+weapon.id+'>'+weapon.name+'<a>+'+weapon.dmg+' dommage</a></option>'
+                );
             });
         }
     });
     $.ajax({
         type: 'GET',
-        url:'/Templates/'+idOfTemplate,
+        url:'/Templates/'+$idOfTemplate,
         success: function(template){
-            $template.append('<div class="card" style="max-width: 250px;"><div class="card-body text-center"><h4 class="card-title">'+template[0].nom+'</h4></div><img class="img-fluid card-img-bottom" style="max-width: 250px; max-height: 250px;" src="'+template[0].url+'"/></div>' );
-          }
+            $template.append( '<img src="'+template[0].url+'" class="img-fluid"><h4 class="font-weight-bold my-3">'+template[0].nom+'</h4>'
+            );
+        }
     });
    
     $('#addPersonnage').on('click', function(){
 //Creation objet personnage
+        console.log("up fct add");
         var jsonPersonnage = 
         {
             "idTemplate":{
-                "id": idOfTemplate,
+                "id": $idOfTemplate,
             },	
             "idWeapon":{
                 "id": $weapons.val(),
@@ -53,6 +55,7 @@ $(function (){
                 "id": $body.val(),
             }   
         };
+        console.log(jsonPersonnage);
         $.ajax({
             type : 'POST',
             url : '/Personnages',

@@ -5,47 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ApiRest Planner lite</title>
   </head>
-
   <body>
     <!-- menu -->
     <header>
-        <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to right, rgb(120,146,154), rgb(132,122,137));">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/">Dofus Planner lite</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/tendency">Home</a>
-              </li>
-            </ul>
-          </div>  
-        </nav>
+      <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to right,#2F69A8,#00B3B0);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/">Dofus Planner lite</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/tendency">Dashbord</a>
+            </li>
+          </ul>
+        </div>  
+      </nav>
     </header>
     <!-- end menu -->
+    <hr>
     <div class="container">
-      <h5>Creation de personnage</h5>
-      <div id="template"></div>
-      <select class="custom-select" id="weapons">
-        <option selected>Select weapon</option>
-      </select>
-      <select class="custom-select" id="body">
-        <option selected>Select body</option>
-      </select>
+      <div class="jumbotron">
+        <h4>Création</h4>
+      </div>
+      <div class="deck-card text-center" >
+        <div id="template"></div>
+        <div class="card-body pb-0">
+          <ul class="list-group list-group-flush">
+            <select class="custom-select" id="weapons">
+              <option selected>Sélectionner : Arme</option>
+            </select>
+            <select class="custom-select" id="allbody">
+              <option selected>Sélectionner : Cape</option>
+            </select>
+            <hr>
+            <button id="addPersonnage" type="button" class="btn btn-primary">Valider</button>
+          </ul>
+        </div>
+      </div>
     </div>
-    <button type="button" id="addPersonnage" class="btn btn-primary">Primary</button>
-
-  
- 
-     <!-- Jquery/JavaScript/bootstrap -->
-    <!-- Latest compiled and minified CSS -->
+    <!-- CSS bootstr -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- jQuery library -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <!-- Latest compiled JavaScript -->
+   <!-- JavaScript -->
    <script src="js/javascripts/creation.js"></script>
    <script src="js/javascripts/bootstrap-flash-alert.min.js"></script>
    <script src="js/javascripts/bootstrap-flash-alert.js"></script>

@@ -8,7 +8,7 @@
   <body>
     <!-- menu -->
     <header>
-      <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to right, rgb(120,146,154), rgb(132,122,137));">
+      <nav class="navbar navbar-expand-sm" style="background-image: linear-gradient(to right,#2F69A8,#00B3B0)";>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,26 +18,30 @@
               <a class="nav-link text-light" href="/">Dofus Planner lite</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/tendency">Home</a>
+              <a class="nav-link text-light" href="/tendency">Dashbord</a>
             </li>
           </ul>
         </div>  
       </nav>
     </header>
     <!-- end menu -->
-
+    <hr>
     <div class="container">
-      <h5>Voici la liste de toute les classes créer</h5>
-      <div id="personnages" class="card-deck" ></div>
+      <div class="jumbotron">
+        <h4>Liste de personnages</h4>
+      </div>
+      <div class="deck-card text-center" >
+        <div id="templateOf"></div>
+      </div>
     </div>
-
-    <!-- Jquery/JavaScript/bootstrap -->
-    <!-- Latest compiled and minified CSS -->
+    <!-- CSS bootstr -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- jQuery library -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <!-- Latest compiled JavaScript -->
-   <script src="js/javascripts/templates.js"></script>
+   <!-- JavaScript -->
+   <script src="js/javascripts/tendency.js"></script>
+
+
 
   </body>
 </html>

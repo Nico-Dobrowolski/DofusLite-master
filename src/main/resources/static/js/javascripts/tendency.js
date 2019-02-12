@@ -1,16 +1,36 @@
 $(function (){
-    var $personnages = $('#personnages');
+    
+    var $templateOf = $('#templateOf');
     $.ajax({
         type: 'GET',
-        url:'/Templates',
+        url:'/Personnages',
         success: function(personnages){
           $.each(personnages, function(i, personnage) {
-            $personnages.append('<div class="card" style="max-width: 250px;"><div class="card-body"><div class="card-body text-center"><h4 class="card-title">'+personnage.nom+'</h4><p class="card-text">'+personnage.descrption+'</p></div></div><img class="img-fluid card-img-bottom" style="max-width: 250px; max-height: 250px;" src="'+personnage.url+'"/><a href="/creation?idTemplate='+personnage.id+'" class="btn btn-primary">Choisir ce personnage</a></div>'
-            
-            );
+            $templateOf.append('<div class="shadow-lg p-3 mb-5 bg-white rounded"><img src="'+personnage.idTemplate.url+'"class="img-fluid"><h4 class="font-weight-bold my-3">'+personnage.idTemplate.nom+'</h4>  <ul class="list-group list-group-flush"> <li  class="list-group-item">' + personnage.idBody.name +'<a> +'+personnage.idBody.health+' vie </a> </li> <li  class="list-group-item">' + personnage.idWeapon.name +'<a> +'+personnage.idWeapon.dmg+' dommage </a></li> <hr> <button type="button" Deleteid='+ personnage.id +' class="remove btn btn-outline-danger">Supprimer</button></ul></div>');
           });
         }
+    });
+    console.log(templateOf);
+    
+    $templateOf.delegate('.remove','click', function(){ //lisen any clic on templateOf
+      //Creation objet personnage
+      var $div = $(this).closest('div');
+      $.ajax({
+        type : 'DELETE',
+        url : '/Personnages/'+ $(this).attr('Deleteid'),
+        success: function(){
+          $div.remove();
+        }
+      });     
     });
 });
 
 
+
+  
+  
+  
+  
+  
+  
+  

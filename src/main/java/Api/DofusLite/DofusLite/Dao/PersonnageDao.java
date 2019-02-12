@@ -10,7 +10,5 @@ import Api.DofusLite.DofusLite.Model.PersonnageModel;;
 public interface PersonnageDao extends CrudRepository<PersonnageModel, Long>{
 	public List<PersonnageModel>findAll();
 	public List<PersonnageModel>findById(int id);
-	
-	
-
+	public List<PersonnageModel>deleteById(int id);
 }

@@ -5,15 +5,18 @@ package Api.DofusLite.DofusLite.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 //---------------- Person
 import Api.DofusLite.DofusLite.Dao.PersonnageDao;
 import Api.DofusLite.DofusLite.Model.PersonnageModel;
 //!--------------------------
 import java.util.List;
+
+import javax.transaction.Transactional;
 //=========================================RESOURCE======================================
 
-
+@Transactional // besoin pour pourvoir utiliser delete id 
 @RestController
 public class PersonnageController {
 
@@ -26,9 +29,9 @@ public class PersonnageController {
     	return personnageDao.findAll();
     }
     
-    @GetMapping(value = "/Personnage/{id}")
- 	public List<PersonnageModel> IdPersonnage(@PathVariable int id) {
-     	return personnageDao.findById(id);
+    @GetMapping(value = "/Personnages/{getId}")
+ 	public List<PersonnageModel> IdPersonnage(@PathVariable int getId) {
+     	return personnageDao.findById(getId);
  	}
     
 
@@ -39,6 +42,12 @@ public class PersonnageController {
 
     	System.out.println(personnage);
     	return personnageDao.save(personnage);
+    }
+    
+    
+    @DeleteMapping(value="/Personnages/{deleteId}")
+    public  List<PersonnageModel> IdDelete(@PathVariable int deleteId) {
+    	return personnageDao.deleteById(deleteId);
     }
     
 
